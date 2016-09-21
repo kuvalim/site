@@ -1,0 +1,113 @@
+<html>
+<body>
+<meta charset="utf-8">
+</body>
+<style>
+    td.menu{background:yellow}
+    td.menu:hover{background:green}
+</style>
+<script type="text/javascript">
+function show_pic() {
+//alert('hi');
+var c1_elem = document.getElementById("c1");
+var c2_elem = document.getElementById("c2");
+var c3_elem = document.getElementById("c3");
+c1_elem.style.display='none';
+c2_elem.style.display = 'block';
+c3_elem.style.display = 'block';
+}
+function show_text(){
+var c1_elem = document.getElementById("c1");
+var c2_elem = document.getElementById("c2");
+var c3_elem = document.getElementById("c3");
+c1_elem.style.display='block';
+c2_elem.style.display = 'none';
+c3_elem.style.display = 'block';
+}
+function show_quiz() {
+    var c1_elem = document.getElementById("c1");
+    var c2_elem = document.getElementById("c2");
+    var c3_elem = document.getElementById("c3");
+    c1_elem.style.display = 'block';
+    c2_elem.style.display = 'block';
+    c3_elem.style.display = 'none';
+}
+</script>
+<body>
+<h1>Haile Zimbabve</h1>
+<table border="2" width="100%">
+  <tr>
+       <td width="33%" class="menu" onclick="show_text()">О нашей великой стране</td>
+       <td width="33%" class="menu" onclick="show_pic()">Карта нашей великой страны</td>
+       <td width="33%" class="menu" onclick="show_quiz()">Викторина о нашей великой стране</td>
+      </tr>
+    <tr>
+         <td style="color:red" colspan="3">
+<div id="c1">
+Zimbabve
+Zimbabve greatest country in the world.
+If you want to get in
+you will need to bring your papers
+and your passport.
+
+If you forge, if you lie, if you cheat you will be detained.
+You can not, I repeat, you can not
+fool us here on post.
+Next.
+
+Zimbabve
+Zimbabve better than Nigeria.
+They are stupid and foolish and silly little rats.
+Filthy rats.
+We have tanks, we have bombs, we have guns
+we have glory too.
+There is no cowardly enemy that can bother us.
+Boom.
+
+Zimbabve
+Zimbabve medicine is best in world.
+If you're sick, if you sneeze, or you need another heart.
+Or a lung.
+We have doctors who will make you feel almost no pain.
+If you scream, then they know that you are very much alive.
+Ouch.
+
+Zimbabve
+Zimbabve have best football team in world.
+They kick balls, they kick arse, they kick everything you see.
+They are great.
+They can run, they can jum, they can score so many goals,
+other teams should despair, there is no true hope to win.
+Goal!
+
+Zimbabve
+Zimbabve have best apartments in the world.
+They are big, they are grey, they are square and glorious.
+So great.
+You can eat, you can sleep, you can even just relax
+and watch all the other countries be really jealous.
+Ha-ha.
+
+Zimbabve
+Zimbabve economy is best in world.
+Every man, every month can afford to eat one loaf.
+Mmm, bread.
+Our industry is heaviest in world
+we melt steel, we burn coal, we make air look really cool.
+
+Glory to Zimbabve.
+<div id="c2">
+<img src="flag-zimbabve.jpg">
+</div>
+<div id="c3">
+Oops!
+</div>
+</td>
+    </tr>
+
+</table>
+</body>
+</html>
+
+
+
