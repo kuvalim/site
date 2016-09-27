@@ -3,6 +3,10 @@
 <meta charset="utf-8">
 </body>
 <style>
+body {
+    background:#BDF400 ;
+    color = "black";
+   }
     td.menu{background:yellow}
     td.menu:hover{background:green}
 </style>
@@ -14,7 +18,7 @@ var c2_elem = document.getElementById("c2");
 var c3_elem = document.getElementById("c3");
 c1_elem.style.display='none';
 c2_elem.style.display = 'block';
-c3_elem.style.display = 'block';
+c3_elem.style.display = 'none';
 }
 function show_text(){
 var c1_elem = document.getElementById("c1");
@@ -22,20 +26,20 @@ var c2_elem = document.getElementById("c2");
 var c3_elem = document.getElementById("c3");
 c1_elem.style.display='block';
 c2_elem.style.display = 'none';
-c3_elem.style.display = 'block';
+c3_elem.style.display = 'none';
 }
 function show_quiz() {
     var c1_elem = document.getElementById("c1");
     var c2_elem = document.getElementById("c2");
     var c3_elem = document.getElementById("c3");
-    c1_elem.style.display = 'block';
-    c2_elem.style.display = 'block';
-    c3_elem.style.display = 'none';
+    c1_elem.style.display = 'none';
+    c2_elem.style.display = 'none';
+    c3_elem.style.display = 'block';
 }
 </script>
 <body>
-<h1>Haile Zimbabve</h1>
-<table border="2" width="100%">
+<h1><p align="center">Haile Zimbabve</p></h1>
+<table border="5" width="100%">
   <tr>
        <td width="33%" class="menu" onclick="show_text()">О нашей великой стране</td>
        <td width="33%" class="menu" onclick="show_pic()">Карта нашей великой страны</td>
@@ -44,63 +48,74 @@ function show_quiz() {
     <tr>
          <td style="color:red" colspan="3">
 <div id="c1">
-Zimbabve
-Zimbabve greatest country in the world.
-If you want to get in
-you will need to bring your papers
-and your passport.
-
-If you forge, if you lie, if you cheat you will be detained.
-You can not, I repeat, you can not
-fool us here on post.
-Next.
-
-Zimbabve
-Zimbabve better than Nigeria.
-They are stupid and foolish and silly little rats.
-Filthy rats.
-We have tanks, we have bombs, we have guns
-we have glory too.
-There is no cowardly enemy that can bother us.
-Boom.
-
-Zimbabve
-Zimbabve medicine is best in world.
-If you're sick, if you sneeze, or you need another heart.
-Or a lung.
-We have doctors who will make you feel almost no pain.
-If you scream, then they know that you are very much alive.
-Ouch.
-
-Zimbabve
-Zimbabve have best football team in world.
-They kick balls, they kick arse, they kick everything you see.
-They are great.
-They can run, they can jum, they can score so many goals,
-other teams should despair, there is no true hope to win.
-Goal!
-
-Zimbabve
-Zimbabve have best apartments in the world.
-They are big, they are grey, they are square and glorious.
-So great.
-You can eat, you can sleep, you can even just relax
-and watch all the other countries be really jealous.
-Ha-ha.
-
-Zimbabve
-Zimbabve economy is best in world.
-Every man, every month can afford to eat one loaf.
-Mmm, bread.
-Our industry is heaviest in world
-we melt steel, we burn coal, we make air look really cool.
-
-Glory to Zimbabve.
+  <audio controls>
+    <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis">
+    <source src="audio/music.mp3" type="audio/mpeg">
+    Тег audio не поддерживается вашим браузером. 
+    <a href="audio/music.mp3">Скачайте музыку</a>.
+  </audio>
+Zimbabve <br>
+Zimbabve greatest country in the world.<br>
+If you want to get in <br>
+you will need to bring your papers <br>
+and your passport.<br>
+<br>
+If you forge, if you lie, if you cheat you will be detained.<br>
+You can not, I repeat, you can not<br>
+fool us here on post.<br>
+Next.<br>
+<br>
+Zimbabve<br>
+Zimbabve better than Nigeria.<br>
+They are stupid and foolish and silly little rats.<br>
+Filthy rats.<br>
+We have tanks, we have bombs, we have guns<br>
+we have glory too.<br>
+There is no cowardly enemy that can bother us.<br>
+Boom.<br>
+<br>
+Zimbabve<br>
+Zimbabve medicine is best in world.<br>
+If you're sick, if you sneeze, or you need another heart.<br>
+Or a lung.<br>
+We have doctors who will make you feel almost no pain.<br>
+If you scream, then they know that you are very much alive.<br>
+Ouch.<br>
+<br>
+Zimbabve<br>
+Zimbabve have best football team in world.<br>
+They kick balls, they kick arse, they kick everything you see.<br>
+They are great.<br>
+They can run, they can jum, they can score so many goals,<br>
+other teams should despair, there is no true hope to win.<br>
+Goal!<br>
+<br>
+Zimbabve<br>
+Zimbabve have best apartments in the world.<br>
+They are big, they are grey, they are square and glorious.<br>
+So great.<br>
+You can eat, you can sleep, you can even just relax<br>
+and watch all the other countries be really jealous.<br>
+Ha-ha.<br>
+<br>
+Zimbabve<br>
+Zimbabve economy is best in world.<br>
+Every man, every month can afford to eat one loaf.<br>
+Mmm, bread.<br>
+Our industry is heaviest in world<br>
+we melt steel, we burn coal, we make air look really cool.<br>
+<br>
+Glory to Zimbabve.<br>
+</div>
 <div id="c2">
-<img src="flag-zimbabve.jpg">
+<a target = "_self" href = "Project L.html"
+title = "Touch me">
+<<img src="map.jpg"
+width = "900" height = "900">
+</a>
 </div>
 <div id="c3">
-Oops!
+<button><p align="center"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLScZba9ES80ifb8k0b7gBoGbFbRuEoPEpPCW8snXX-4AvfwFjQ/viewform?embedded=true" width="1280" height="900" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe></p></button>
 </div>
 </td>
     </tr>
