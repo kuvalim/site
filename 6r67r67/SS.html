@@ -1,15 +1,131 @@
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>audio</title>
- </head>
- <body>
-  <p>Александр Клименков - Четырнадцать</p>
-  <audio controls>
-    <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis">
-    <source src="audio/music.mp3" type="audio/mpeg">
-    Тег audio не поддерживается вашим браузером. 
-    <a href="audio/music.mp3">Скачайте музыку</a>.
-  </audio>
- </body>
+<style>
+<!--
+#slidemenubar, #slidemenubar2{
+position:absolute;
+border:1.5px solid black; /* <—-толщина и цвет границы——*/
+background-color:#F2F2F2; /* <—-фон меню——*/
+layer-background-color:#F2F2F2;
+font:bold 12px Verdana; /* <—-фон, высота, название шрифта——*/
+line-height:20px;
+}
+-->
+</style>
+
+<script type="text/javascript">
+
+
+var slidemenu_width='160px' //ширина меню в пикселях
+var slidemenu_reveal='15px' //ширина на которую меню будет торчать из-за экрана
+var slidemenu_top='40px'   //расстояние на котрую меню будет ниже верхнего края страницы
+
+var ns4=document.layers?1:0
+var ie4=document.all
+var ns6=document.getElementById&&!document.all?1:0
+
+if (ie4||ns6)
+document.write('<div id="slidemenubar2" style="left:'+((parseInt(slidemenu_width)-parseInt(slidemenu_reveal))*-1)+'px; top:'+slidemenu_top+'; width:'+slidemenu_width+'" onMouseover="pull()" onMouseout="draw()">')
+else if (ns4){
+document.write('<style>\n#slidemenubar{\nwidth:'+slidemenu_width+';}\n<\/style>\n')
+document.write('<layer id="slidemenubar" left=0 top='+slidemenu_top+' width='+slidemenu_width+' onMouseover="pull()" onMouseout="draw()" visibility=hide>')
+}
+
+var sitems=new Array()
+
+///////////Edit below/////////////////////////////////
+
+//siteitems[x]=["Item Text", "Optional URL associated with text"]
+
+sitems[0]=["<big><font face='Arial'>Меню сайта</font></big>", ""]
+sitems[1]=["Главная", "index.html"]
+sitems[2]=["Навигация", "/"]
+sitems[3]=["Скроллинг", "/"]
+sitems[4]=["Эффекты", "/"]
+sitems[5]=["Календари ", "/"]
+sitems[6]=["Переадресация", "/"]
+sitems[7]=["Защита", "/"]
+sitems[8]=["Окна и фреймы", "/"]
+sitems[9]=["Кнопки", "/"]
+sitems[10]=["Почта", "/"]
+
+//If you want the links to load in another frame/window, specify name of target (ie: target="_new")
+var target=""
+
+/////////////////////////////////////////////////////////
+
+if (ie4||ns4||ns6){
+for (i=0;i<sitems.length;i++){
+if (sitems[i][1])
+document.write('<a href="'+sitems[i][1]+'" target="'+target+'">')
+document.write(sitems[i][0])
+if (sitems[i][1])
+document.write('</a>')
+document.write('<br>\n')
+}
+}
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+if (ns4){
+document.slidemenubar.left=((parseInt(slidemenu_width)-parseInt(slidemenu_reveal))*-1)
+document.slidemenubar.visibility="show"
+setTimeout("window.onresize=regenerate",400)
+}
+}
+window.onload=regenerate2
+
+rightboundary=0
+leftboundary=(parseInt(slidemenu_width)-parseInt(slidemenu_reveal))*-1
+
+if (ie4||ns6){
+document.write('</div>')
+themenu=(ns6)? document.getElementById("slidemenubar2").style : document.all.slidemenubar2.style
+}
+else if (ns4){
+document.write('</layer>')
+themenu=document.layers.slidemenubar
+}
+
+function pull(){
+if (window.drawit)
+clearInterval(drawit)
+pullit=setInterval("pullengine()",10)
+}
+function draw(){
+clearInterval(pullit)
+drawit=setInterval("drawengine()",10)
+}
+function pullengine(){
+if ((ie4||ns6)&&parseInt(themenu.left)<rightboundary)
+themenu.left=parseInt(themenu.left)+10+"px"
+else if(ns4&&themenu.left<rightboundary)
+themenu.left+=10
+else if (window.pullit){
+themenu.left=0
+clearInterval(pullit)
+}
+}
+
+function drawengine(){
+if ((ie4||ns6)&&parseInt(themenu.left)>leftboundary)
+themenu.left=parseInt(themenu.left)-10+"px"
+else if(ns4&&themenu.left>leftboundary)
+themenu.left-=10
+else if (window.drawit){
+themenu.left=leftboundary
+clearInterval(drawit)
+}
+}
+</script>
+</head>
+<body>
+<h1 onclick="location.href='index.html'" style="text-align:center;font: bold 24px Arial,sans-serif; color:#FFCC66;;text-shadow: 1px 1px 2px #000;behavior: url(byn.htc);cursor:pointer">
+<script type="text/javascript">
+document.write(document.title)
+</script></h1>
+
+<script type="text/javascript" src="target.js"></script>
+
+</body>
 </html>
