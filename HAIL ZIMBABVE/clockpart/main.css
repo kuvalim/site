@@ -1,0 +1,373 @@
+/* colors
+
+cyan2: #00AAAA
+cyan: #55FFFF
+
+green2: #00AA00
+green: #55FF55
+
+red: #FF5555
+
+grey: #AAAAAA
+dark: #555555
+*/
+
+/* common */
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, * {
+    font-family: "Lucida Console", Monaco, monospace;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #99ffff;
+}
+
+/*********************************************************/
+/* HEADER */
+/*********************************************************/
+.header > .top{
+    display: flex;
+    flex-direction: row;
+}
+
+.header .left, .header .right{
+    flex-grow: 1;
+    flex-basis: 50%;
+    /*background: red;*/
+    padding: 10px;
+    margin: 10px;
+}
+.header .right > div{
+    margin: 0.5em 0 0;
+}
+
+.header .right span.label{
+    color: #00AAAA;
+    text-transform: capitalize;
+}
+
+.header .right span.status-live{
+    color: #55FF55;
+    font-weight: bolder;
+}
+
+.header .right span.last-submit-value{
+    color: #99ffff;
+    font-weight: bolder;
+}
+
+.header .left{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.header .logo img, .locked > img{
+    height: 10em;
+}
+
+.navigation_box{
+    text-align: center;
+}
+.ul_nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.4em;
+}
+.ul_nav > li{
+    display: inline-block;
+    margin: 0;
+}
+
+.ul_nav > li > a{
+    margin: 0;
+    padding: 0 0.8em;
+    /*background-color: #00AAAA;*/
+    background-color: #55CC55;
+    color: black;
+}
+
+.ul_nav > li > a:hover, .ul_nav > li > a.active{
+    background-color: #55CCCC;
+}
+
+.navigation_box{
+    /*box-shadow: 0 0.4em #00AAAA;*/
+    border-bottom: 0.4em solid #55CCCC;
+}
+/*********************************************************/
+/* MAIN */
+/*********************************************************/
+.content{
+    padding: 1em 0;
+}
+.content_box {
+    padding: 0 2em 0 2em;
+}
+
+.content_box h1{
+    padding: 0.2em;
+    margin: 0.2em 0 0;
+    /*margin-left: -2em;*/
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.content_box h2{
+    margin: 0.2em 0 0;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+.content_box > p{
+    padding: 0 0 0 2em;
+    margin: 0;
+    /*padding-left: 2em;*/
+}
+.content_box > p + p{
+    margin-top: 0.8em;
+}
+/*********************************************************/
+/* LOCK */
+/*********************************************************/
+.locked, .commit.success {
+    text-align: center;
+}
+.locked > img, .commit.success > img {
+    height: 10em;
+}
+
+.stroked-back{
+    background-image: repeating-linear-gradient(180deg, rgba(85, 255, 255, 0.05) 0, rgba(85, 255, 255, 0.05) 0.1em, transparent 0.5em);
+}
+
+.locked h1{
+    color: #FF5555;
+}
+/*********************************************************/
+/* SCORE TABLE */
+/*********************************************************/
+.table-container{
+    text-align: center;
+}
+/*TODO: make it work http://stackoverflow.com/questions/9789723*/
+.table-container > table.score_table{
+    /*display: inline-block;*/
+    width: 60%;
+    max-width: 60%;
+    overflow: hidden;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.table-container > table.score_table th{
+    background: #55CC55;
+    color: black;
+}
+.table-container > table.score_table tr:nth-of-type(odd) {
+    background: #111;
+}
+.table-container > table.score_table tr > th:nth-of-type(1),
+.table-container > table.score_table tr > td:nth-of-type(1){
+    width: 3em;
+}
+
+.table-container > table.score_table tr > th:nth-of-type(2),
+.table-container > table.score_table tr > td:nth-of-type(2){
+    width: 4em;
+    text-align: right;
+}
+.table-container > table.score_table tr > th:nth-of-type(3),
+.table-container > table.score_table tr > td:nth-of-type(3){
+    /*width: 70%;*/
+    text-align: left;
+    padding-left: 2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    /*width: 10em;*/
+}
+.table-container > table.score_table a{
+    color: #99ffff;
+}
+
+/*********************************************************/
+/* TASKS */
+/*********************************************************/
+.task-table-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task-row .task-class{
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+.task-row .task-enum{
+    padding: 0.4em 0 0.8em 2em;
+    /*padding-left: 2em;*/
+}
+.task-row .task-card{
+    font-size: 1.2em;
+    color: #99ffff;
+}
+.task-row .task-card:before{
+    content: '[';
+}
+.task-row .task-card:after{
+    content: ']';
+}
+.task-row .task-card.task-locked{
+    color: #FF5555;
+}
+.task-row .task-card.task-locked:before{
+    content: '[';
+}
+/*********************************************************/
+/* TASK CARD */
+/*********************************************************/
+.content_box.taskd-container{
+    display: flex;
+}
+.content_box.taskd-container > .taskd{
+    flex-basis: 65%;
+}
+.content_box.taskd-container > .flag-submit-container{
+    flex-basis: 35%;
+}
+.taskd{
+    padding: 0 2em;
+}
+.taskd > h1{
+    margin-left: -2em;
+}
+.taskd .taskd-link{
+    color: #99ffff;
+}
+.flag-submit-container{
+    text-align: center;
+}
+.flag-submit{
+    padding: 0.2em;
+    border: solid #55CCCC 4px;
+    font-size: 1.2em;
+    /*display: inline-block;*/
+}
+.flag-submit input{
+    margin-bottom: 0.2em;
+    text-align: center;
+    color: #55FF55;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid #55CC55;
+}
+.flag-submit input[type="text"]{
+    width: 100%;
+}
+.flag-submit input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #55FF55;
+}
+.flag-submit input.submit{
+    color: black;
+    background-color: #55CC55;
+    border: none;
+    font-size: 1.1em;
+}
+.flag-submit input.submit:hover{
+    background-color: #55CCCC;
+}
+.flag-submit, .flag-submit > div{
+    text-align: center;
+}
+.flag-submit h1{
+    font-size: 1em;
+}
+/*********************************************************/
+/* PROFILE */
+/*********************************************************/
+.levels > .levels-row > span{
+    display: inline-block;
+    /*background: red;*/
+}
+.levels > .levels-row > span.row-label{
+    width: 5em;
+    text-align: right;
+}
+.levels > .levels-row > span.row-value-container{
+    position: relative;
+    display: inline-block;
+    width: 20em;
+    background: red;
+}
+.levels > .levels-row > span.row-value-container:before{
+    content: '[';
+    color: white;
+    font-weight: bolder;
+}
+.levels > .levels-row > span.row-value-container:after{
+    position: absolute;
+    right: 0;
+    content: ']';
+    color: white;
+    font-weight: bolder;
+}
+.profile-summary > div.stats-entry > span.label{
+    color: #00AAAA;
+    text-transform: capitalize;
+}
+.profile-summary > div.stats-entry > span.value{
+    color: #99ffff;
+    font-weight: bolder;
+}
+.profile-summary > div.stats-entry.points > span.value{
+    font-size: 2em;
+}
+.profile-summary > div.stats-entry.points > span.value:after{
+    content:'pt';
+}
+/*********************************************************/
+/* PROFILE */
+/*********************************************************/
+.profile-container{
+    padding: 0 2em;
+}
+.profile-container > h1{
+    margin-left: -2em;
+}
+.profile-container .table-container{
+    margin: 1em -1em 0;
+}
+.profile-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.profile-table th,.profile-table td{
+    text-align: left;
+}
+.profile-table th{
+    background: #55CC55;
+    color: black;
+}
+.profile-table tr:nth-of-type(odd) {
+    background: #111;
+}
+.profile-table td:nth-of-type(2){
+    color: #AAA;
+}
+.profile-table a{
+    color: #99ffff;
+}
